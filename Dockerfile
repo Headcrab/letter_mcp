@@ -22,5 +22,11 @@ WORKDIR /app
 # Copy the built binary from the builder stage
 COPY --from=builder /app/letter_mcp ./
 
-# Запуск сервера через stdio
-ENTRYPOINT ["./letter_mcp", "-t", "sse"]
+# Создаем директорию для логов
+RUN mkdir -p /app/logs
+
+# Установка переменной окружения для порта (по умолчанию 8080)
+ENV PORT=8080
+
+# Запуск сервера через SSE с заданным портом
+ENTRYPOINT ["sh", "-c", "./letter_mcp -t sse"]

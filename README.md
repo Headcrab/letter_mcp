@@ -64,6 +64,16 @@ docker build -t letter_mcp .
 docker run -d -p 8080:8080 --name letter_mcp letter_mcp:latest
 ```
 
+Запуск с Docker Compose
+
+```bash
+# Запуск со стандартным портом 8080
+docker-compose up -d
+
+# Запуск с пользовательским портом
+PORT=9090 docker-compose up -d
+```
+
 ## Формат запросов и ответов
 
 ### Запрос
@@ -101,8 +111,8 @@ docker run -d -p 8080:8080 --name letter_mcp letter_mcp:latest
 ```json
 {
   "mcpServers": {
-    "filesystem": {
-      "command": "D:/work/go/letter_mcp/letter_mcp.exe",
+    "count_letters": {
+      "command": "/your/path/to/letter_mcp.exe",
       "args": [],
       "disabled": false,
       "alwaysAllow": []
@@ -116,7 +126,7 @@ docker run -d -p 8080:8080 --name letter_mcp letter_mcp:latest
 ```json
 {
   "mcpServers": {
-    "server-name": {
+    "count_letters": {
       "url": "http://localhost:8080/sse",
       "env": {
         "API_KEY": ""

@@ -44,4 +44,44 @@ go.work
 # Кэш тестового покрытия
 *.coverprofile
 coverage.out
-coverage.html 
+coverage.html
+
+# Environment variables
+.env.local
+
+# Logs
+logs/
+
+# Testing
+*.test
+*.out
+
+# System files
+.DS_Store
+Thumbs.db
+
+# Binaries
+letter_mcp
+*.exe
+*.dll
+*.so
+*.dylib
+
+# Environment variables
+.env
+.env.local
+
+# Logs
+logs/
+
+# IDE directories
+.idea/
+.vscode/
+
+# Testing
+*.test
+*.out
+
+# System files
+.DS_Store
+Thumbs.db 
